@@ -633,6 +633,7 @@ MonoBehaviour:
   pivot: {fileID: 1232303785}
   offset: {x: 0, y: 0, z: 0}
   mouseSpeed: 5
+  prevHorizontal: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 945174252283500740, guid: e1e5d1ab995a82044ad478edb78b083d, type: 3}
       propertyPath: m_Name
-      value: Barrel Audio
+      value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 8044664085512216469, guid: e1e5d1ab995a82044ad478edb78b083d, type: 3}
       propertyPath: m_LocalPosition.x
