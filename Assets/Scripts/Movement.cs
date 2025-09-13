@@ -1,32 +1,37 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    private CharacterController Controller;
+    private CharacterController controller;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int speed = 3;
     void Start()
     {
-        
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w")) {
-            Controller.Move(Vector3.forward * Time.deltaTime * speed);
+        if (Keyboard.current.wKey.isPressed) {
+            controller.Move(Vector3.forward * Time.deltaTime * speed);
+            transform.LookAt(transform.position + new Vector3(0, 0, 1));
         }
-        if (Input.GetKey("s"))
+        if (Keyboard.current.sKey.isPressed)
         {
-            Controller.Move(Vector3.back * Time.deltaTime * speed);
+            controller.Move(Vector3.back * Time.deltaTime * speed);
+            transform.LookAt(transform.position + new Vector3(0, 0, -1));
         }
-        if (Input.GetKey("a"))
+        if (Keyboard.current.aKey.isPressed)
         {
-            Controller.Move(Vector3.left * Time.deltaTime * speed);
+            controller.Move(Vector3.left * Time.deltaTime * speed);
+            transform.LookAt(transform.position + new Vector3(-1, 0, 0));
         }
-        if (Input.GetKey("d"))
+        if (Keyboard.current.dKey.isPressed)
         {
-            Controller.Move(Vector3.right * Time.deltaTime * speed);
+            controller.Move(Vector3.right * Time.deltaTime * speed);
+            transform.LookAt(transform.position + new Vector3(1, 0, 0));
         }
     }
 }
