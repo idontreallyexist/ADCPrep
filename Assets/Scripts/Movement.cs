@@ -16,19 +16,19 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (Keyboard.current.wKey.isPressed)
         {
-            controller.Move(Vector3.forward * Time.deltaTime * speed);
+            controller.Move(transform.forward * Time.deltaTime * speed);
         }
         if (Keyboard.current.sKey.isPressed)
         {
-            controller.Move(Vector3.back * Time.deltaTime * speed);
+            controller.Move(-transform.forward * Time.deltaTime * speed);
         }
         if (Keyboard.current.aKey.isPressed)
         {
-            controller.Move(Vector3.left * Time.deltaTime * speed);
+            controller.Move(-transform.right * Time.deltaTime * speed);
         }
         if (Keyboard.current.dKey.isPressed)
         {
-            controller.Move(Vector3.right * Time.deltaTime * speed);
+            controller.Move(transform.right * Time.deltaTime * speed);
         }
     }
 
