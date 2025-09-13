@@ -37,6 +37,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (hit.collider.tag == "Barrel") {
             Debug.Log("Hit");
+            var audio = hit.gameObject.GetComponent<AudioSource>();
+            audio.Play();
         }
     }
 }
