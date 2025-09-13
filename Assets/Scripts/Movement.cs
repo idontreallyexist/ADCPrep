@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     private CharacterController controller;
+    public Transform hitObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int speed = 3;
     void Start()
