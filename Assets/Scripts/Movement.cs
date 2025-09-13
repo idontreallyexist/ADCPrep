@@ -14,7 +14,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.wKey.isPressed) {
+        if (Keyboard.current.wKey.isPressed)
+        {
             controller.Move(Vector3.forward * Time.deltaTime * speed);
             transform.LookAt(transform.position + new Vector3(0, 0, 1));
         }
@@ -33,5 +34,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
             controller.Move(Vector3.right * Time.deltaTime * speed);
             transform.LookAt(transform.position + new Vector3(1, 0, 0));
         }
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.tag == "Barrel") {
+            Debug.Log("Hit");
+        }
+                
     }
 }
