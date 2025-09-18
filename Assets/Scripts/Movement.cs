@@ -31,6 +31,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             controller.Move(transform.right * Time.deltaTime * speed);
         }
+        if (Keyboard.current.spaceKey.isPressed && controller.isGrounded) {
+            controller.Move(transform.up * Time.deltaTime * speed);
+        }
+        if (!controller.isGrounded) {
+            controller.Move(-Time.deltaTime * Time.deltaTime * transform.up);
+        }
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
