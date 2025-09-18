@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public float mouseSpeed = 3.0f;
     public float prevHorizontal = 0;
+    public float prevVertical = 0;
     void Start()
     {
         offset = target.transform.position-transform.position;
@@ -23,7 +24,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float horizontal = Mouse.current.position.ReadValue().x * mouseSpeed;
-        float vertical = Mouse.current.position.ReadValue().y * -1;
+        float vertical = Mouse.current.position.ReadValue().y * mouseSpeed;
         float desiredXAngle = target.eulerAngles.x;
         float desiredYAngle = target.eulerAngles.y;
         Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
@@ -42,5 +43,6 @@ public class CameraController : MonoBehaviour
             pivot.rotation = Quaternion.Euler(330f, 0, 0);
         }
         pivot.Rotate(vertical, 0, 0);
+        prevVertical = vertical;
     }
 }
