@@ -4,6 +4,7 @@ public class PlanetMotion : MonoBehaviour
 {
     public float distance;
     public float speed;
+    public float selfRotateSpeed;
     float degrees = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,5 +19,6 @@ public class PlanetMotion : MonoBehaviour
             50,
             Mathf.Cos(degrees * Mathf.PI / 180) * distance);
         degrees = degrees + Time.deltaTime*speed;
+        transform.Rotate(Vector3.up * selfRotateSpeed * Time.deltaTime);
     }
 }

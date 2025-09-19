@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7dd168d02d6e2504382551df76382a5c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -148,8 +148,8 @@ Transform:
   m_GameObject: {fileID: 136382615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 20}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 0, y: 50, z: 25}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -166,8 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 20
-  speed: 15
+  distance: 25
+  speed: 10
+  selfRotateSpeed: 2
 --- !u!135 &136382618
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -274,8 +275,8 @@ Transform:
   m_GameObject: {fileID: 354963018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 60}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: 50, z: 75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -292,8 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 60
-  speed: 8
+  distance: 75
+  speed: 6
+  selfRotateSpeed: 10
 --- !u!135 &354963021
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -438,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 503033521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 150}
+  m_LocalPosition: {x: 0, y: 50, z: 180}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -458,8 +460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 150
+  distance: 180
   speed: 3
+  selfRotateSpeed: 16
 --- !u!1 &644854246
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +492,8 @@ Transform:
   m_GameObject: {fileID: 644854246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 250}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 50, z: 275}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -507,8 +510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 250
+  distance: 275
   speed: 2
+  selfRotateSpeed: 12
 --- !u!135 &644854249
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -616,7 +620,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 50, z: 370}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -635,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
   distance: 370
   speed: 1.2
+  selfRotateSpeed: 14
 --- !u!135 &679050133
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -867,6 +872,51 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &943152741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 943152743}
+  - component: {fileID: 943152742}
+  m_Layer: 0
+  m_Name: Skybox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &943152742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943152741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385aad7ecd815e34eacd5a5269521025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkyboxMovement
+  rotationSpeed: 5
+--- !u!4 &943152743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943152741}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.14054, y: 56.90427, z: 18.45666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093018659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1099,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 0.1, z: 9}
+  m_LocalScale: {x: 14, y: 0.05, z: 14}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 503033522}
@@ -1162,8 +1212,8 @@ Transform:
   m_GameObject: {fileID: 1457700521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 50, z: 55}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -1180,8 +1230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 45
-  speed: 10
+  distance: 55
+  speed: 7
+  selfRotateSpeed: 10
 --- !u!135 &1457700524
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1271,6 +1322,7 @@ GameObject:
   - component: {fileID: 1505126475}
   - component: {fileID: 1505126474}
   - component: {fileID: 1505126473}
+  - component: {fileID: 1505126476}
   m_Layer: 0
   m_Name: The Sun
   m_TagString: Untagged
@@ -1288,7 +1340,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 50, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -1370,6 +1422,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505126469}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1505126476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505126469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
+  distance: 0
+  speed: 0
+  selfRotateSpeed: 2
 --- !u!1 &1699595825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,8 +1466,8 @@ Transform:
   m_GameObject: {fileID: 1699595825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 100}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 50, z: 120}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -1419,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
   distance: 100
   speed: 4
+  selfRotateSpeed: 20
 --- !u!135 &1699595828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1652,7 +1720,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 503033522}
@@ -1763,8 +1831,8 @@ Transform:
   m_GameObject: {fileID: 2016180299}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 50, z: 40}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 421218085}
@@ -1781,8 +1849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251063b90e7267488cc8661cdf4ae17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanetMotion
-  distance: 30
-  speed: 12
+  distance: 40
+  speed: 8
+  selfRotateSpeed: 1
 --- !u!135 &2016180302
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1867,3 +1936,4 @@ SceneRoots:
   - {fileID: 709693432}
   - {fileID: 1841675845}
   - {fileID: 421218085}
+  - {fileID: 943152743}
