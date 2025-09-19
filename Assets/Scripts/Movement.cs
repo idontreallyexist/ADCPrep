@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private CharacterController controller;
     public Animator anim;
